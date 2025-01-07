@@ -17,4 +17,4 @@ eg
 | Property 2         | HOLLAND ROAD    | 5-9           | 880            |
 | Property 3         | HOLLAND ROAD    | 10-14           | 810            |
 ### 5. **Get allocated_population from following equation:**
-allocated_population for building at 5 year age range = `P_ar_sz` * (`floor area for building`) / (`total floor area for all buildings in subzone`)**
+allocated_population for building at 5 year age range = `P_ar_sz` * (`floor area for building` / `total floor area for all buildings in subzone`)**
