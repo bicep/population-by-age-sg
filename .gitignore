@@ -1,0 +1,5 @@
+processed/
+final/
+.DS_Store
+__pycache__/
+raw/
