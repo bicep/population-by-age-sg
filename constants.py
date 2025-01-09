@@ -6,7 +6,7 @@ OSM_PATH = "./raw/osm_buildings.geojson"
 LANDUSE_PATH = "./raw/landuse_layer.geojson"
 POPULATION_ALL_AGES_INTERPOLATED_DATA = "./processed/population_all_age_brackets_interpolated.geojson"
 POPULATION_ELDERLY_INTERPOLATED_DATA = "./processed/population_elderly_interpolated.geojson"
-POPULATION_COMBINED_INTERPOLATED_DATA = "./processed/population_combined_interpolated.geojson"
+POPULATION_TOTAL_INTERPOLATED_DATA = "./processed/population_total_interpolated.geojson"
 POPULATION_ELDERLY_RATE_INTERPOLATED_DATA = "./processed/population_elderly_rate_interpolated.geojson"
 
 OUTPUT_CRS = "EPSG:4326"  # WGS84

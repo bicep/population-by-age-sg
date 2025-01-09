@@ -153,30 +153,30 @@ def calculate_elderly_rate():
     
     Args:
         POPULATION_ELDERLY_INTERPOLATED_DATA (str): Path to the elderly GeoJSON file.
-        POPULATION_COMBINED_INTERPOLATED_DATA (str): Path to the combined GeoJSON file.
+        POPULATION_TOTAL_INTERPOLATED_DATA (str): Path to the total GeoJSON file.
         output_path (str): Path to save the updated GeoJSON file.
     """
     # Load the GeoJSON files
     with open(POPULATION_ELDERLY_INTERPOLATED_DATA, "r") as elderly_file:
         elderly_data = json.load(elderly_file)
     
-    with open(POPULATION_COMBINED_INTERPOLATED_DATA, "r") as combined_file:
-        combined_data = json.load(combined_file)
+    with open(POPULATION_TOTAL_INTERPOLATED_DATA, "r") as total_file:
+        total_data = json.load(total_file)
 
     # Ensure features are aligned
-    if len(elderly_data["features"]) != len(combined_data["features"]):
-        raise ValueError("The number of features in elderly and combined data do not match.")
+    if len(elderly_data["features"]) != len(total_data["features"]):
+        raise ValueError("The number of features in elderly and total data do not match.")
     
     # Add elderly rate to each feature
-    for elderly_feature, combined_feature in zip(elderly_data["features"], combined_data["features"]):
+    for elderly_feature, total_feature in zip(elderly_data["features"], total_data["features"]):
         # Deep equality check for geometries
-        if elderly_feature["geometry"] != combined_feature["geometry"]:
-            raise ValueError("Mismatch in geometry between elderly and combined data.")
+        if elderly_feature["geometry"] != total_feature["geometry"]:
+            raise ValueError("Mismatch in geometry between elderly and total data.")
         
         # Calculate elderly rate
         elderly_population = elderly_feature["properties"].get("allocated_population", 0)
-        combined_population = combined_feature["properties"].get("allocated_population", 1)  # Avoid division by zero
-        elderly_rate = elderly_population / combined_population if combined_population > 0 else 0
+        total_population = total_feature["properties"].get("allocated_population", 1)  # Avoid division by zero
+        elderly_rate = elderly_population / total_population if total_population > 0 else 0
         
         # Add elderly rate to the properties
         elderly_feature["properties"]["elderly_rate"] = elderly_rate
