@@ -16,19 +16,25 @@ This pipeline focuses on processing population data and integrating it with buil
 - Spatial join residential building data from 1 and population count data from 2 using subzone as common column (there are some differences in subzones here due to zoning updates)
 - Each residential building in particular subzone will have the population count in that subzone for all 5 year age ranges `P_ar_sz` associated with it
 eg
-| **Building Name** | **Subzone**      | **Age Range** | **total population in that subzone for that age range, or P_ar_sz** |
-|--------------------|------------------|---------------|----------------|
-| Property 1         | HOLLAND ROAD    | 0-4           | 460            |
-| Property 2         | HOLLAND ROAD    | 5-9           | 880            |
-| Property 3         | HOLLAND ROAD    | 0-4           | 460            |
+
+| **Building Name** | **Subzone**      | **Age Range** | **Total Population in Subzone for Age Range (P_ar_sz)** |
+|--------------------|------------------|---------------|--------------------------------------------------------|
+| Property 1         | HOLLAND ROAD    | 0-4           | 460                                                    |
+| Property 2         | HOLLAND ROAD    | 5-9           | 880                                                    |
+| Property 3         | HOLLAND ROAD    | 0-4           | 460                                                    |
+
+
 ### 4. **Get allocated_population for each building from following equation:**
 - Allocated_population for building at 5 year age range = `P_ar_sz` * (`floor area for building` / `total floor area for all buildings in subzone`)**
 - Each building will have 19 entries, one for each age range since there are 19 age ranges
-| **Building Name** | **Subzone**      | **Age Range** | **allocated_population** |
-|--------------------|------------------|---------------|----------------|
-| Property 1         | HOLLAND ROAD    | 0-4           | 2.2466340148352275            |
-| Property 1         | HOLLAND ROAD    | 5-9           | 4.2979085501195655            |
-| Property 1         | HOLLAND ROAD    | 10-14           | 3.9560294609055089            |
+
+| **Building Name** | **Subzone**      | **Age Range** | **Allocated Population**       |
+|--------------------|------------------|---------------|---------------------------------|
+| Property 1         | HOLLAND ROAD    | 0-4           | 2.2466340148352275             |
+| Property 1         | HOLLAND ROAD    | 5-9           | 4.2979085501195655             |
+| Property 1         | HOLLAND ROAD    | 10-14         | 3.9560294609055089             |
+
+
 ### 5. **Get elderly population count or total population count for each building:**
 - Sum up the allocated_population for age range 65 and up for elderly
 - Sum up the allocated_population for age range 0 and up for total
