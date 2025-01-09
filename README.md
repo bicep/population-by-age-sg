@@ -5,7 +5,7 @@ This pipeline focuses on processing population data and integrating it with buil
 ---
 
 ### 1. **Prepare Building Geojson Dataset: Spatial join OSM Building with subzone data + calculate floor area data.**
-- Calculate the floor area of the buildings (building_level * floor_area)
+- Calculate the floor area of the buildings (building_level * polygon_area_from_coordinates)
 - Spatial join OSM Buildings geojson with subzone geojson- each building has its associated subzone
 - Spatial join OSM buildings geojson with landuse layer geojson - each building has its associated building type (residential/commercial/etc...)
 
