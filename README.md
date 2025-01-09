@@ -1,6 +1,4 @@
-# High-Level Approach for Population and Building Data Processing
-
-This pipeline focuses on processing population data and integrating it with building data to derive elderly rate.
+# Generating population count data for residential buildings
 
 ---
 
