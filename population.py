@@ -32,11 +32,11 @@ def allocate_population_to_buildings(residential_with_subzones):
     Retains only necessary columns in the final DataFrame.
     """
     # Precompute total floor area for each subzone
-    subzone_areas = residential_with_subzones.groupby('subzone')['floor_area'].sum().to_dict()
+    total_floor_areas_for_each_subzone = residential_with_subzones.groupby('subzone')['floor_area'].sum().to_dict()
 
     # Allocate population for each building and age bracket
     residential_with_subzones['allocated_population'] = (
-        (residential_with_subzones['floor_area'] / residential_with_subzones['subzone'].map(subzone_areas)) *
+        (residential_with_subzones['floor_area'] / residential_with_subzones['subzone'].map(total_floor_areas_for_each_subzone)) *
         residential_with_subzones['population_count']
     ).fillna(0)
 

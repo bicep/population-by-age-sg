@@ -34,6 +34,7 @@ eg
 
 ### 4. **Get allocated_population for each building from following equation:**
 - Allocated_population for building at 5 year age range = `P_ar_sz` * (`floor area for building` / `total floor area for all buildings in subzone`)**
+    - See `allocate_population_to_buildings` function for more details
 - Each building will have 19 entries, one for each age range since there are 19 age ranges
 
 | **Building Name** | **Subzone**      | **Age Range** | **Allocated Population**       |
