@@ -8,6 +8,14 @@ This pipeline focuses on processing population data and integrating it with buil
 - Calculate the floor area of the buildings (building_level * floor_area)
 - Spatial join OSM Buildings geojson with subzone geojson- each building has its associated subzone
 - Spatial join OSM buildings geojson with landuse layer geojson - each building has its associated building type (residential/commercial/etc...)
+
+| **building_type** | **building_levels** | **floor_area**       | **subzone**        | **geometry**          |
+|--------------------|---------------------|-----------------------|---------------------|------------------------|
+| residential        | 10.0               | 25680.54998362458     | holland road       | polygon coordinates    |
+| business 2         | 4.0                | 6646.7549249990434    | northland          | polygon coordinates    |
+| residential        | 1.0                | 205.78635889348112    | sembawang east     | polygon coordinates    |
+| residential        | 16.0               | 19367.436393773427    | pasir ris west     | polygon coordinates    |
+
 - Filter out only residential building polygons and associated subzones
 ### 2. **Prepare total population count per age bracket per subzone**
 - Population count dataset from singapore department of statistics has scattered population count entries for given age bracket in different subzones
