@@ -1,5 +1,8 @@
 # Generating population count data for residential buildings
 
+![Singapore Elderly Rate](images/elderly_rate.png "Estimated elderly rates per residential building in Sg")
+*Visualization of estimated elderly rates based on this approach.*
+
 ---
 
 ### 1. **Prepare Building Geojson Dataset: Spatial join OSM Building with subzone data + calculate floor area data.**
